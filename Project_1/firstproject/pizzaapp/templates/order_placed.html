@@ -1,0 +1,50 @@
+{% extends 'base2.html' %}
+
+{% block content2 %}
+
+    <div class="d-flex flex-column align-items-center">
+        <br>
+        <h1>Order Placed</h1>
+        <br>
+        <h4>Your order has been placed. Thank you for choosing PizzaTastic.</h4>
+        <br>
+            <div class="card border-dark mb-3" style="max-width: 25rem;">
+                <div class="card-header">Order summary</div>
+                <div class="card-body">
+                  <h5 class="card-title">Order placed on {{ order.date }}</h5><br>
+                  <p>Address: {{order.address}}</p>
+                  <p>Size: {{ order.pizza.size }}</p>
+                  <p>Crust: {{ order.pizza.crust }}</p>
+                  <p>Cheese: {{ order.pizza.cheese }}</p>
+                  <p>Toppings: {{ order.pizza.get_toppings }}</p>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 col-3 mx-auto">
+                <br>
+                <button class="btn btn-primary" type="button"><a href="{% url 'createpizza' %}" class="text-white text-decoration-none">Create another order</a></button>
+              </div>
+     
+        
+      
+    </div>
+
+    <!-- <ul>
+        <h3>Order Details:</h3>
+        <li>Address: {{order.address}}</li>
+        <li>Order time/date: {{order.date}}</li>
+        <li>{{order.pizza.size}}</li>
+        <li>{{order.pizza.crust}}</li>
+        <li>{{order.pizza.sauce}}</li>
+        <li>{{order.pizza.cheese}}</li>
+
+        {% for topping in order.pizza.get_toppings %}
+            <li>{{topping}}</li>
+        {% endfor %}
+    </ul> -->
+
+    <!-- <a href="{% url 'index' %}">Return to home</a> -->
+
+{% endblock %}
+
+

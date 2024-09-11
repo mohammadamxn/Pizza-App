@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content2 %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title text-center mb-4">Login</h1> <!-- mb-4 adds margin-bottom space -->
+                    <form action="." method="POST">
+                        {% csrf_token %}
+                        <div class="form-group mb-3"> <!-- mb-3 adds margin-bottom space -->
+                            <label for="inputEmail">Email</label>
+                            <!-- <input {{forms.username}}> -->
+                            <input type="email" name="username" class="form-control" id="inputEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group mb-4"> <!-- mb-4 adds more margin-bottom space -->
+                            <label for="inputPassword">Password</label>
+                            <!-- <input {{forms.password}}> -->
+                            <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign in</button> <!-- w-100 makes the button full width -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div> 
+
+
+{% endblock %}
+    
+    <!-- <form action="." method="POST">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <button type="submit">Submit</button>
+    </form>  -->
